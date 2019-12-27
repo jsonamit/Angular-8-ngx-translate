@@ -1,0 +1,13 @@
+<div class="bg-dark" style="text-align:center;">  
+  <h2>  
+     {{ 'demo.title' | translate}} 
+  </h2>  
+  <select #langSelect (change)="changeLang(langSelect.value)">  
+      <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>  
+  </select>  
+</div>  
+<div class="row">  
+  <div class="col-md-8">  
+    <router-outlet></router-outlet>  
+  </div>  
+</div>
